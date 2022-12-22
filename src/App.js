@@ -6,6 +6,7 @@ import AddMessage from './components/AddMessage';
 import React from "react";
 import UserCommetModal from './components/UserCommentModal';
 import Home from './pages/Home';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <PrimarySearchAppBar />
       {/* <AddComment /> */}
       <Home />
+      <Footer  />
       {/* <UserCommetModal /> */}
     </div>
    );
