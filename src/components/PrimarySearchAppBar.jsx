@@ -20,6 +20,7 @@ import { MessageOutlined } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 import AddCommentModal from './AddCommentModal';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
+import FacebookTwoTone from '@mui/icons-material/FacebookTwoTone';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -184,7 +185,7 @@ export default function PrimarySearchAppBar() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            <FacebookTwoTone />
           </IconButton>
           <Typography
             variant="h6"
