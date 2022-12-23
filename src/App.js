@@ -1,20 +1,20 @@
 /* import './App.css'; */
-import Navbar from './components/Navbar';
-import AddComment from './components/AddComment';
 import PrimarySearchAppBar from './components/PrimarySearchAppBar';
-import AddMessage from './components/AddMessage';
 import React from "react";
-import UserCommetModal from './components/UserCommentModal';
 import Home from './pages/Home';
 import Footer from './components/Footer';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 
 const App = () => {
   return (
     <div>
-      <PrimarySearchAppBar />
+      {/* <PrimarySearchAppBar /> */}
       {/* <AddComment /> */}
-      <Home />
-      <Footer  />
+      {/* <Home />
+      <Footer  /> */}
+      {/* <Login /> */}
+      <SignUp />
       {/* <UserCommetModal /> */}
     </div>
    );

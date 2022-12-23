@@ -1,0 +1,15 @@
+#registerBtn {
+    margin-top: 15px ;
+}
+
+#alreadyRegisterLink {
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.container {
+    display: flex;
+    margin-top: 200px;
+    justify-content: center;
+    text-align: center;
+}

@@ -1,110 +1,72 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { TextField, Typography } from '@mui/material'
+import React from 'react'
+import Button from '@mui/material/Button'
+import './signup.css'
+import CallIcon from '@mui/icons-material/Call';
+import { useState } from 'react';
 
-const SignUpForm = () => {
-  /* constructor() {
-    super();
-
-    this.state = {
-      email: "",
-      password: "",
-      name: "",
-      hasAgreed: false
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+const SignUp = () => {
+  const [userValue,setUserValue] = useState({
+    name:"",email:"",mobile:"",password: "",cpassword:""
+  })
+  
+  let name,value
+  const userInput = (e) => {
+    // console.log(e)
+    name = e.target.name
+    value = e.target.value
+    setUserValue({...userValue, [name]:value})
   }
 
-  handleChange(event) {
-    let target = event.target;
-    let value = target.type === "checkbox" ? target.checked : target.value;
-    let name = target.name;
-
-    this.setState({
-      [name]: value
-    });
+  const onRegisterClick = () =>{
+    console.log({...userValue})
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
+  return (
+    <div className='container'>
+      <div className='left_side'>
+        <div className='row'>
+          <div className='col-md-6'>
+            <div className='col-md-12'>
 
-    console.log("The form was submitted with the following data:");
-    console.log(this.state);
-  } */
-
-  {
-    return (
-      <div className="formCenter">
-        <form className="formFields">
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="name">
-              Full Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              className="formFieldInput"
-              placeholder="Enter your full name"
-              name="name"
-              //value={this.state.name}
-              //onChange={this.handleChange}
-            />
+            </div>
           </div>
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="password">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              className="formFieldInput"
-              placeholder="Enter your password"
-              name="password"
-              //value={this.state.password}
-              //onChange={this.handleChange}
-            />
-          </div>
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="email">
-              E-Mail Address
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="formFieldInput"
-              placeholder="Enter your email"
-              name="email"
-              //value={this.state.email}
-              //onChange={this.handleChange}
-            />
-          </div>
-
-          <div className="formField">
-            <label className="formFieldCheckboxLabel">
-              <input
-                className="formFieldCheckbox"
-                type="checkbox"
-                name="hasAgreed"
-                //value={this.state.hasAgreed}
-                //onChange={this.handleChange}
-              />{" "}
-              I agree all statements in{" "}
-              <a href="null" className="formFieldTermsLink">
-                terms of service
-              </a>
-            </label>
-          </div>
-
-          <div className="formField">
-            <button className="formFieldButton">Sign Up</button>{" "}
-            {/* <Link to="/sign-in" className="formFieldLink">
-              I'm already member
-            </Link> */}
-          </div>
-        </form>
+        </div>
       </div>
-    );
-  }
+      <div className='right_side'>
+        <div className='row'>
+          <div className='col-md-6'>
+            <div className='col-md-12'>
+              <Typography variant='h5'>
+                Please Register
+              </Typography>
+            </div>
+            <div className='col-md-12' htmlFor="Name">
+              <TextField variant='standard' name='name' value={userValue.name} onChange={userInput} label="Name" required />
+            </div>
+            <div className='col-md-12' htmlFor="Email">
+              <TextField variant='standard' label="Email" value={userValue.email} name='email' onChange={userInput} type="email" required />
+            </div>
+            <div className='col-md-12' htmlFor="Mobile">
+              <TextField variant='standard' label="Mobile" value={userValue.mobile} name='mobile' onChange={userInput} type="number" required />
+            </div>
+            <div className='col-md-12' htmlFor="Password">
+              <TextField variant='standard' label="Password" value={userValue.password} name='password' onChange={userInput} type="password" required />
+            </div>
+            <div className='col-md-12' htmlFor="CnfPassword">
+              <TextField variant='standard' label="Confirm Password" value={userValue.cpassword} name='cpassword' onChange={userInput} type="password" required />
+            </div>
+            <div className='col-md-12' htmlFor="RegisterBtn" id='registerBtn' >
+              <Button variant='contained' onClick={onRegisterClick}>Register</Button>
+            </div>
+            <div className='col-md-12' id="alreadyRegisterLink" >
+              <a href='#' id='alreadyRegisterLink'>Already Register,Please Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
-export default SignUpForm;
+
+export default SignUp
