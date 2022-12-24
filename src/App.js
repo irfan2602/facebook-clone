@@ -9,13 +9,11 @@ import SignUp from './pages/SignUp';
 const App = () => {
   return (
     <div>
-      {/* <PrimarySearchAppBar /> */}
-      {/* <AddComment /> */}
-      {/* <Home />
-      <Footer  /> */}
+      <PrimarySearchAppBar />
+      <Home />
+      <Footer  />
       {/* <Login /> */}
-      <SignUp />
-      {/* <UserCommetModal /> */}
+      {/* <SignUp /> */}
     </div>
    );
 }

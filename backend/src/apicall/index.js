@@ -4,6 +4,7 @@ const User = require('../models/users')
 require('../db/connection')
 
 
+
 /* using promises */
 /* app.post('/users', (req,res) => {
     console.log(req.body)
