@@ -2,11 +2,12 @@ const express = require('express')
 const router = new express.Router()
 const User = require('../models/users')
 require('../db/connection')
+const apidata = require('../fetchapi')
 
 
 
 /* using promises */
-/* app.post('/users', (req,res) => {
+/* router.post('/users', (req,res) => {
     console.log(req.body)
     const user = new User(req.body)
     user.save().then(() =>{
@@ -27,6 +28,10 @@ router.post('/users', async (req, res) => {
         res.status(400).send(e)
     }
 })
+
+/* router.get('/apidata', (req,res) =>{
+    console.log(apidata)
+}) */
 
 router.get('/users', async (req, res) => {
     try {
